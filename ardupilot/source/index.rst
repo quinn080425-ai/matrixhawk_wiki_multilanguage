@@ -4,13 +4,17 @@
     <h1 style="text-align:center;">ArduPilot</h1>
 
     <p style="text-align:center;color:green;"><strong>
-    ArduPilot is open source <u>software</u> that runs on a wide range of <u>hardware</u>.</strong>
+    2014年初，3D Robotics (3DR) 与 PX4 团队合作推出了pixhawk飞控，引领开源无人机从APM时代迈向全新的STM32架构，开启开源无人机系统的新纪元！<br>
+    时至今日，诸多商家为寻求低成本的无下限缩水，由于核心传感器停产等原因，真原版的pixhawk已难觅踪影。<br>
+    我们一直在思考，既然开源硬件已经省去了绝大部分的软件开发测试费用？为何硬件上就不可行一条用原版的价值，廉价但可持续的方式为客户赋能之路？<br>
+    marixhawk就是BZUAV在这样的理念下，推出的致敬pixhawk12周年纪念版！<br>
+    我们郑重承诺，产品符合FMUV3开源固件要求，严格遵循开源硬件规范。并通过自主研发的自动测试架构，质量品控如一！</strong>
 
     <p style="text-align:center;color:red;"><strong>
     Success with ArduPilot requires that the 'First Time Setup' and 'First Flight/Drive and Tuning' sections of the vehicle's documentation be read and followed!</strong>
 
     <p style="text-align:left; color:black;">
-
+    pixhawk
      MATRIXHAWK enables the creation and use of trusted, autonomous,
     unmanned vehicle systems for the peaceful benefit of
     all. ArduPilot provides a comprehensive suite of tools suitable
