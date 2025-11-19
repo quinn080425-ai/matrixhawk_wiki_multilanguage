@@ -1,0 +1,13 @@
+/* 调整 logo 大小 */
+.wy-side-nav-search .logo img {
+    max-width: 100% !important;     /* 占满侧边栏宽度（约300px） */
+    width: 280px !important;        /* 或指定固定宽度 */
+    height: auto;                   /* 保持宽高比 */
+    margin: 20px auto;              /* 上下间距 + 居中 */
+    display: block;
+}
+
+/* 如果还想增大侧边栏 logo 区域 */
+.wy-side-nav-search {
+    padding: 20px;                  /* 增加内边距 */
+}
