@@ -1,31 +1,18 @@
-/* 调整 logo 大小 */
-.wy-side-nav-search .logo img {
-    max-width: 100% !important;     /* 占满侧边栏宽度（约300px） */
-    width: 280px !important;        /* 或指定固定宽度 */
-    height: auto;                   /* 保持宽高比 */
-    margin: 20px auto;              /* 上下间距 + 居中 */
-    display: block;
-}
+/* ================= DEBUG: simplified layout for centering debug ==================
+   说明：
+   - 保留 :root 变量和宽屏 Grid 布局（Grid + position:sticky）
+   - 注释掉其它非必要样式，便于定位问题
+   ============================================================================ */
 
-/* 如果还想增大侧边栏 logo 区域 */
-.wy-side-nav-search {
-    padding: 20px;                  /* 增加内边距 */
-}
-
-/* ========================================
-   宽屏居中布局优化
-   ======================================== */
-
-/* 基础变量 */
+/* 基础变量（保留） */
 :root {
     --sidebar-width: 300px;
     --content-max-width: 1000px;
     --container-max-width: 1400px;
 }
 
-/* 宽屏（1400px+）居中 - 改为 Grid + sticky 实现，避免侧栏覆盖正文 */
+/* 居中布局（主调试块，保留） */
 @media screen and (min-width: 1400px) {
-    /* 整体容器居中并使用两列布局：侧栏 + 内容 */
     .wy-grid-for-nav {
         max-width: var(--container-max-width);
         margin: 0 auto;
@@ -35,17 +22,16 @@
         align-items: start;
     }
 
-    /* 侧边栏：保持在可视区，但不脱离文档流 */
     .wy-nav-side {
         position: sticky;
-        top: 20px;                  /* 顶部间距，可根据需要调整 */
-        height: calc(100vh - 40px); /* 视窗高度减去上下间距，防止溢出 */
-        overflow: auto;             /* 当侧栏内容过长时可滚动 */
-        width: var(--sidebar-width);/* 明确宽度 */
-        z-index: 10;                /* 确保在必要时位于内容之上，但不会覆盖布局 */
+        top: 20px;
+        height: calc(100vh - 40px);
+        overflow: auto;
+        width: var(--sidebar-width);
+        z-index: 10;
+        background: inherit; /* 保持主题背景 */
     }
 
-    /* 内容包裹器不再通过 margin-left 偏移，交由 Grid 控制列布局 */
     .wy-nav-content-wrap {
         margin-left: 0;
         max-width: calc(var(--container-max-width) - var(--sidebar-width));
@@ -58,57 +44,49 @@
     }
 }
 
-/* 超宽屏（1920px+）优化 */
-@media screen and (min-width: 1920px) {
-    :root {
-        --container-max-width: 1600px;
-        --content-max-width: 1200px;
-    }
+/* ================= DEBUG: 注释掉其余可能干扰样式 ================== */
+
+/* 侧栏 logo、搜索、表格、代码块、图片对齐等样式先注释掉，便于排查 */
+/*
+.wy-side-nav-search .logo img {
+    max-width: 280px !important;
+    width: 100% !important;
+    height: auto;
+    margin: 20px auto;
+    display: block;
 }
 
-/* 平板（768px - 1399px）保持默认 */
-@media screen and (min-width: 768px) and (max-width: 1399px) {
-    .wy-nav-content {
-        max-width: 100%;
-    }
+.wy-side-nav-search {
+    padding: 1rem;
+    text-align: center;
 }
 
-/* 移动端（<768px）保持响应式 */
-@media screen and (max-width: 767px) {
-    .wy-nav-side {
-        position: static !important;
-        transform: none !important;
-    }
-    
-    .wy-nav-content-wrap {
-        margin-left: 0 !important;
-    }
-}
-
-/* ========================================
-   其他样式优化（可选）
-   ======================================== */
-
-/* 优化表格在宽屏的显示 */
 @media screen and (min-width: 1400px) {
-    table {
-        width: auto;
-        max-width: 100%;
-    }
-    
-    .wy-table-responsive table {
-        width: 100%;
+    .wy-nav-side {
+        position: fixed;
+        left: 50%;
+        transform: translateX(calc(-1 * var(--container-max-width) / 2));
     }
 }
 
-/* 优化代码块 */
+.table-responsive {
+    overflow-x: auto;
+}
+
 .highlight {
     border-radius: 4px;
 }
 
-/* 优化图片居中 */
-.align-center {
+.align-center,
+.align-center img {
     display: block;
     margin-left: auto;
     margin-right: auto;
+    max-width: 100%;
+    height: auto;
 }
+*/
+
+/* ================ 结束注释块 ================ */
+
+/* 可选：在调试完成后，逐段取消注释查看哪个规则导致覆盖问题 */
