@@ -23,28 +23,34 @@
     --container-max-width: 1400px;
 }
 
-/* 宽屏（1400px+）居中 */
+/* 宽屏（1400px+）居中 - 改为 Grid + sticky 实现，避免侧栏覆盖正文 */
 @media screen and (min-width: 1400px) {
-    /* 整体容器居中 */
+    /* 整体容器居中并使用两列布局：侧栏 + 内容 */
     .wy-grid-for-nav {
         max-width: var(--container-max-width);
         margin: 0 auto;
+        display: grid;
+        grid-template-columns: var(--sidebar-width) 1fr;
+        gap: 0;
+        align-items: start;
     }
-    
-    /* 侧边栏固定位置 */
+
+    /* 侧边栏：保持在可视区，但不脱离文档流 */
     .wy-nav-side {
-        position: fixed;
-        width: var(--sidebar-width);
-        left: 50%;
-        transform: translateX(calc(-1 * var(--container-max-width) / 2));
+        position: sticky;
+        top: 20px;                  /* 顶部间距，可根据需要调整 */
+        height: calc(100vh - 40px); /* 视窗高度减去上下间距，防止溢出 */
+        overflow: auto;             /* 当侧栏内容过长时可滚动 */
+        width: var(--sidebar-width);/* 明确宽度 */
+        z-index: 10;                /* 确保在必要时位于内容之上，但不会覆盖布局 */
     }
-    
-    /* 内容区域调整 */
+
+    /* 内容包裹器不再通过 margin-left 偏移，交由 Grid 控制列布局 */
     .wy-nav-content-wrap {
-        margin-left: var(--sidebar-width);
+        margin-left: 0;
         max-width: calc(var(--container-max-width) - var(--sidebar-width));
     }
-    
+
     .wy-nav-content {
         max-width: var(--content-max-width);
         margin: 0 auto;
