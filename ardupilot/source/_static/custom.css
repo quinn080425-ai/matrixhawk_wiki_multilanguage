@@ -11,3 +11,98 @@
 .wy-side-nav-search {
     padding: 20px;                  /* 增加内边距 */
 }
+
+/* ========================================
+   宽屏居中布局优化
+   ======================================== */
+
+/* 基础变量 */
+:root {
+    --sidebar-width: 300px;
+    --content-max-width: 1000px;
+    --container-max-width: 1400px;
+}
+
+/* 宽屏（1400px+）居中 */
+@media screen and (min-width: 1400px) {
+    /* 整体容器居中 */
+    .wy-grid-for-nav {
+        max-width: var(--container-max-width);
+        margin: 0 auto;
+    }
+    
+    /* 侧边栏固定位置 */
+    .wy-nav-side {
+        position: fixed;
+        width: var(--sidebar-width);
+        left: 50%;
+        transform: translateX(calc(-1 * var(--container-max-width) / 2));
+    }
+    
+    /* 内容区域调整 */
+    .wy-nav-content-wrap {
+        margin-left: var(--sidebar-width);
+        max-width: calc(var(--container-max-width) - var(--sidebar-width));
+    }
+    
+    .wy-nav-content {
+        max-width: var(--content-max-width);
+        margin: 0 auto;
+        padding: 2em 3em;
+    }
+}
+
+/* 超宽屏（1920px+）优化 */
+@media screen and (min-width: 1920px) {
+    :root {
+        --container-max-width: 1600px;
+        --content-max-width: 1200px;
+    }
+}
+
+/* 平板（768px - 1399px）保持默认 */
+@media screen and (min-width: 768px) and (max-width: 1399px) {
+    .wy-nav-content {
+        max-width: 100%;
+    }
+}
+
+/* 移动端（<768px）保持响应式 */
+@media screen and (max-width: 767px) {
+    .wy-nav-side {
+        position: static !important;
+        transform: none !important;
+    }
+    
+    .wy-nav-content-wrap {
+        margin-left: 0 !important;
+    }
+}
+
+/* ========================================
+   其他样式优化（可选）
+   ======================================== */
+
+/* 优化表格在宽屏的显示 */
+@media screen and (min-width: 1400px) {
+    table {
+        width: auto;
+        max-width: 100%;
+    }
+    
+    .wy-table-responsive table {
+        width: 100%;
+    }
+}
+
+/* 优化代码块 */
+.highlight {
+    border-radius: 4px;
+}
+
+/* 优化图片居中 */
+.align-center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}

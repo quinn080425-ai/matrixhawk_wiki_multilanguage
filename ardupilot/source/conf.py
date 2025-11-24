@@ -150,7 +150,16 @@ html_favicon = '../../images/favicon_default.ico'
 # relative to this directory. They are copied after the builtin static files,
 # so a file named "default.css" will overwrite the builtin "default.css".
 html_static_path = ['_static']
-html_css_files = ['custom.css']
+
+# 添加自定义 CSS（确保这行存在）
+html_css_files = [
+    'custom.css',
+]
+
+# 可选：添加自定义 JavaScript
+html_js_files = [
+    # 'custom.js',  # 如果需要
+]
 
 # Add any extra paths that contain custom files (such as robots.txt or
 # .htaccess) here, relative to this directory. These files are copied
