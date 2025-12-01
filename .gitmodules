@@ -1,0 +1,3 @@
+[submodule "common/source/_themes/matrixhawk_sphinx_theme"]
+	path = common/source/_themes/matrixhawk_sphinx_theme
+	url = https://github.com/CyberUAV/matrixhawk_sphinx_rtd_theme.git
