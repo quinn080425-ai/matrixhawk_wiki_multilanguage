@@ -463,6 +463,8 @@ def copy_common_source_files(start_dir=COMMON_DIR):
                     destination_file.write(content)
                     destination_file.close()
             elif file.endswith(".css"):
+                if "_themes" in root:
+                    continue
                 for wiki in ALL_WIKIS:
                     shutil.copy2(os.path.join(root, file),
                                  '%s/source/_static/' % wiki)
