@@ -102,8 +102,8 @@ point-and-click interaction with your hardware, custom scripting, and simulation
 
 --------------
 
- matrixhawk Documentation
-=======================
+matrixhawk Documentation
+==========================
 
 See sidebar for links to ArduPilot documents.
 

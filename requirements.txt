@@ -10,8 +10,8 @@ requests>=2.31.0
 # lxml for parameter parsing:
 lxml
 
-# Install sphinx theme from ArduPilot repository
-git+https://github.com/ArduPilot/sphinx_rtd_theme.git
+# Install sphinx theme from matrixhawk repository
+git+https://github.com/CyberUAV/matrixhawk_sphinx_rtd_theme.git
 
 # Sphinx youtube and video plugins:
 # This package will require a --force option if you have an older extension installed

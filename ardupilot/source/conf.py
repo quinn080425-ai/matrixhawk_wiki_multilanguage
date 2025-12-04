@@ -115,9 +115,16 @@ todo_include_todos = True
 # a list of builtin themes.
 # html_theme = 'alabaster'
 
-html_theme = "sphinx_rtd_theme"
-# Add any paths that contain custom themes here, relative to this directory.
-html_theme_path = [sphinx_rtd_theme.get_html_theme_path()]
+# 1. 主题名称保持不变 (对应内层文件夹的名字)
+# 根据你提供的路径，内层文件夹叫 matrixhawk_sphinx_rtd_theme
+html_theme = "matrixhawk_sphinx_rtd_theme"
+
+# 2. 修改搜索路径：指向外层文件夹的内部
+# 假设外层文件夹叫 matrixhawk_sphinx_thd_theme (或者 rtd_theme，取决于你之前的重命名)
+# 我们把路径直接指进子模块的根目录
+html_theme_path = [
+    os.path.join(ROOT, 'common', 'source', '_themes', 'matrixhawk_sphinx_rtd_theme')
+]
 
 # Theme options are theme-specific and customize the look and feel of a theme
 # further.  For a list of options available for each theme, see the
@@ -139,7 +146,7 @@ html_short_title = 'ardupilot'
 
 # The name of an image file (relative to this directory) to place at the top
 # of the sidebar.
-html_logo = '../../logos/matrixhawk-user-mannal-SVG.svg'
+# html_logo = '../../logos/matrixhawk-user-mannal-SVG.svg'
 
 # The name of an image file (within the static path) to use as favicon of the
 # docs.  This file should be a Windows icon file (.ico) being 16x16 or 32x32
@@ -151,10 +158,10 @@ html_favicon = '../../images/favicon_default.ico'
 # so a file named "default.css" will overwrite the builtin "default.css".
 html_static_path = ['_static']
 
-# 添加自定义 CSS（确保这行存在）
-html_css_files = [
-    'custom.css',
-]
+# 添加自定义 CSS（已切换到子主题，建议注释掉此处，除非需要额外覆盖）
+# html_css_files = [
+#     'custom.css',
+# ]
 
 # 可选：添加自定义 JavaScript
 html_js_files = [
