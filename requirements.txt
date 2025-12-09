@@ -27,3 +27,7 @@ beautifulsoup4
 
 # Install flake8
 flake8==3.7.9
+
+# Force rebuild: 2024-clear-cache
+sphinx-rtd-theme
+# ... 其他内容
