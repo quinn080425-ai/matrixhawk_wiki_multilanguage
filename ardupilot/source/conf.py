@@ -117,7 +117,7 @@ todo_include_todos = True
 
 # 1. 主题名称保持不变 (对应内层文件夹的名字)
 # 根据你提供的路径，内层文件夹叫 matrixhawk_sphinx_rtd_theme
-html_theme = "matrixhawk_sphinx_rtd_theme"
+html_theme = "sphinx_rtd_theme"
 
 # 2. 修改搜索路径：指向外层文件夹的内部
 # 假设外层文件夹叫 matrixhawk_sphinx_thd_theme (或者 rtd_theme，取决于你之前的重命名)
