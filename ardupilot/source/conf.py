@@ -163,10 +163,10 @@ html_static_path = ['_static']
 #     'custom.css',
 # ]
 
-# 可选：添加自定义 JavaScript
-html_js_files = [
-    # 'custom.js',  # 如果需要
-]
+# # 可选：添加自定义 JavaScript
+# html_js_files = [
+#     # 'custom.js',  # 如果需要
+# ]
 
 # Add any extra paths that contain custom files (such as robots.txt or
 # .htaccess) here, relative to this directory. These files are copied
