@@ -120,17 +120,6 @@ todo_include_todos = True
 # a list of builtin themes.
 # html_theme = 'alabaster'
 
-# 1. 主题名称保持不变 (对应内层文件夹的名字)
-# 根据你提供的路径，内层文件夹叫 matrixhawk_sphinx_rtd_theme
-html_theme = "sphinx_rtd_theme"
-
-# 2. 修改搜索路径：指向外层文件夹的内部
-# 假设外层文件夹叫 matrixhawk_sphinx_thd_theme (或者 rtd_theme，取决于你之前的重命名)
-# 我们把路径直接指进子模块的根目录
-html_theme_path = [
-    os.path.join(ROOT, 'common', 'source', '_themes', 'matrixhawk_sphinx_rtd_theme')
-]
-
 # Theme options are theme-specific and customize the look and feel of a theme
 # further.  For a list of options available for each theme, see the
 # documentation.
