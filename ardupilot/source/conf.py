@@ -22,7 +22,7 @@ import sphinx_rtd_theme
 ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..'))
 sys.path.insert(0, ROOT)  # noqa: E402
 import common_conf  # noqa: E402
-
+import sphinx_rtd_theme
 
 # If extensions (or modules to document with autodoc) are in another directory,
 # add these directories to sys.path here. If the directory is relative to the
@@ -43,6 +43,11 @@ templates_path = [os.path.join(os.path.dirname(__file__), '_templates')]
 # You can specify multiple suffix as a list of string:
 # source_suffix = ['.rst', '.md']
 source_suffix = '.rst'
+
+# -- Theme configuration for RTD and local builds --
+html_theme = 'matrixhawk_sphinx_rtd_theme'
+# Set the theme path so Sphinx/RTD can find it
+html_theme_path = [os.path.abspath(os.path.join(os.path.dirname(__file__), '../../common/source/_themes'))]
 
 # The encoding of source files.
 # source_encoding = 'utf-8-sig'
