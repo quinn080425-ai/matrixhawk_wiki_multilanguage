@@ -5,13 +5,6 @@ build:
   tools:
     python: "3.11"
 
-# ⬇️⬇️⬇️ 【新增核心配置】 ⬇️⬇️⬇️
-# 必须显式告诉 RTD 去拉取子模块，否则子项目文件夹是空的！
-submodules:
-  include: all
-  recursive: true
-# ⬆️⬆️⬆️ ------------------- ⬆️⬆️⬆️
-
 sphinx:
   configuration: ardupilot/source/conf.py
 

@@ -3,6 +3,16 @@
 # This contains common configuration information for the ardupilot wikis.
 # This information is imported by the conf.py files in each of the sub wikis
 
+# --- VERSION CONTROL SYSTEM ---
+# This is the SINGLE SOURCE OF TRUTH for the project version.
+# Commitizen will automatically bump this version number.
+__version__ = "0.1.0"
+
+# Sphinx variables mapping
+# When child conf.py files import *, they will inherit these values.
+version = __version__
+release = __version__
+# ------------------------------
 
 # Add any Sphinx extension module names here, as strings. They can be
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom

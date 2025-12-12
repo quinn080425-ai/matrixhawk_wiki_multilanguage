@@ -29,30 +29,7 @@ source_suffix = '.rst'
 # The master toctree document.
 master_doc = 'index'
 
-
-# -----------------------------------------------------------------------------
-# 3. 主题配置 (关键修改点)
-# -----------------------------------------------------------------------------
-# 既然我们已经修复了 setup.py 并注册了 entry_points
-# Sphinx 会自动从 Python 环境中找到这个主题，无需指定 html_theme_path
-html_theme = 'matrixhawk_sphinx_rtd_theme'
-
-try:
-    # 尝试导入我们安装好的包
-    import matrixhawk_sphinx_rtd_theme
-    
-    # 获取包的物理路径 (就是你刚才列表里显示的那个路径)
-    theme_path = os.path.dirname(os.path.dirname(matrixhawk_sphinx_rtd_theme.__file__))
-    
-    # 告诉 Sphinx: "别去注册表里查了，主题就在这个文件夹里！"
-    html_theme_path = [theme_path]
-    
-    print(f"✅ 主题路径锁定: {theme_path}")
-
-except ImportError:
-    print("❌ 致命错误: Python 找不到 matrixhawk_sphinx_rtd_theme 包")
-    print("请运行: pip install -e ./submodules/matrixhawk_sphinx_rtd_theme")
-
+import matrixhawk_sphinx_rtd_theme
 
 # -----------------------------------------------------------------------------
 # 4. 项目信息
@@ -61,8 +38,8 @@ project = u'matrixhawk user manual'
 copyright = u'2024, ArduPilot Dev Team. Modifications and New Content © 2025, BZUAV Devteam'
 author = u'BZUAV Dev Team'
 
-version = u'0.1'
-release = u'0.0.1'
+version = common_conf.version
+release = common_conf.release
 language = 'en'
 
 exclude_patterns = []

@@ -10,18 +10,13 @@ requests>=2.31.0
 beautifulsoup4
 lxml
 
-# --- Install Local Submodule Theme (Recommended) ---
-# 使用 -e (Editable) 安装本地子模块
-# 这样你修改 submodules 里的代码，文档编译会立即生效
+# --- Install Local Submodule Theme  ---
 -e ./common/source/_themes/matrixhawk_sphinx_rtd_theme
-
-# --- OR: Install from Remote Git (Not Recommended for Dev) ---
-# 仅当你不想下载子模块，只想用网上现成的版本时才用下面这行
-# git+https://github.com/CyberUAV/matrixhawk_sphinx_rtd_theme.git
 
 # --- Plugins ---
 git+https://github.com/ArduPilot/sphinxcontrib-youtube.git
-# 如果需要 sphinxcontrib-jquery，建议也显式加上，Sphinx 7+ 不再内置 jQuery
+
+
 sphinxcontrib-jquery
 
 # --- Linting ---

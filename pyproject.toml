@@ -1,0 +1,47 @@
+[tool.commitizen]
+name = "cz_conventional_commits"
+version = "0.1.0"
+tag_format = "v$version"
+
+# 核心精简：只让 cz 更新 common_conf.py
+# 因为其他 conf.py 会 import 这个文件，所以不需要在这里列出它们
+version_files = [
+    # 1. 根目录下的通用配置
+    "common_conf.py:__version__",
+
+    # 2. 子项目配置 (修改 version 和 release)
+    "ardupilot/source/conf.py:version",
+    "ardupilot/source/conf.py:release",
+    "copter/source/conf.py:version",
+    "copter/source/conf.py:release",
+    "antennatracker/source/conf.py:version",
+    "antennatracker/source/conf.py:release",
+    "blimp/source/conf.py:version",
+    "blimp/source/conf.py:release",
+    "dev/source/conf.py:version",
+    "dev/source/conf.py:release",
+    "mavproxy/source/conf.py:version",
+    "mavproxy/source/conf.py:release",
+    "plane/source/conf.py:version",
+    "plane/source/conf.py:release",
+    "planner/source/conf.py:version",
+    "planner/source/conf.py:release",
+    "planner2/source/conf.py:version",
+    "planner2/source/conf.py:release",
+    "rover/source/conf.py:version",
+    "rover/source/conf.py:release",
+    "sub/source/conf.py:version",
+    "sub/source/conf.py:release"
+]
+
+# 样式设置
+style = [
+    ["qmark", "fg:#ff9d00 bold"],
+    ["question", "bold"],
+    ["answer", "fg:#ff9d00 bold"],
+    ["pointer", "fg:#ff9d00 bold"],
+    ["highlighted", "fg:#ff9d00 bold"],
+    ["selected", "fg:#cc5454"],
+    ["separator", "fg:#cc5454"],
+    ["instruction", ""]
+]
