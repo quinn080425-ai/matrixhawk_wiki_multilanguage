@@ -5,6 +5,13 @@ build:
   tools:
     python: "3.11"
 
+# ==========================================
+# 🔑 关键修复：开启子模块下载
+# ==========================================
+submodules:
+  include: all      # 下载所有子模块（包括 common 目录下的主题）
+  recursive: true   # 递归下载（防止主题本身还有子模块）
+
 sphinx:
   configuration: ardupilot/source/conf.py
 
