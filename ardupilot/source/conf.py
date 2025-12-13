@@ -30,6 +30,8 @@ source_suffix = '.rst'
 master_doc = 'index'
 
 import matrixhawk_sphinx_rtd_theme
+html_theme = 'matrixhawk_sphinx_rtd_theme'
+html_theme_path = [matrixhawk_sphinx_rtd_theme.get_html_theme_path()]
 
 # -----------------------------------------------------------------------------
 # 4. 项目信息
